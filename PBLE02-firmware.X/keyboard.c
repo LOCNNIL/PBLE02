@@ -1,5 +1,6 @@
 #include "keyboard.h"
 #include "mcc_generated_files/system.h"
+#include "mcc_generated_files/adc1.h"
 #include "Utils.h"
 
 void updateButtons(uint32_t m){
