@@ -54,7 +54,8 @@
 #include "mcc_generated_files/uart1.h"
 #include "mcc_generated_files/i2c2.h"
 #include "memory.h"
-
+#include "adc.h"
+#include "mcc_generated_files/mccp1_compare.h"
 /*
                          Main application
  */
@@ -71,41 +72,30 @@ int main(void)
     // initialize the device
     SYSTEM_Initialize();
     
-    TMR1_SetInterruptHandler(timer1);
-    lcdInit();
-    lcdCommand(1);
-    lcdString("Test I2C");
-    lcdCommand(0xc0);
+    uint32_t priVal,secVal;
+    bool completeCycle = false;
+    priVal = 0x12378958;
+    secVal = 0x2000;
+
+    MCCP1_COMPARE_Initialize();
     
-    uint32_t lst = 0;
+    MCCP1_COMPARE_SingleCompare32ValueSet( priVal );
+    MCCP1_COMPARE_Start();
     
-    uint8_t lstSec;
-    
-    uint8_t errCnt = 0;
-    
-    while (1){
-        if(millis - lst >= 900){
-            if(RTCC_TimeGet(&currentTime)){
-                if(lstSec != currentTime.tm_sec){
-                    lcdCommand(0xC0);
-                    lcd2Dig(currentTime.tm_hour);
-                    lcdChar(':');
-                    lcd2Dig(currentTime.tm_min);
-                    lcdChar(':');
-                    lcd2Dig(currentTime.tm_sec);
-                    lcdChar(' ');
-                    lcdInt(millis - lst);
-                    lst = millis;
-                    lstSec= currentTime.tm_sec;
-                }
-            }else {
-                lcdCommand(0x80);
-                errCnt++;
-                lcdInt(errCnt);
-            }
+    LED1_SetHigh();
+  
+    while(1);
+    /*
+     * 
+    while(1)
+    {
+       
+        completeCycle = MCCP1_COMPARE_IsCompareCycleComplete();
+        if(completeCycle)
+        {
+            //MCCP1_COMPARE_Stop();
         }
-        
-    }
+    }*/
     return 1; 
 }
 /**

@@ -13,7 +13,9 @@ extern "C" {
 #endif
 
     uint16_t readPOTADC(void);
-
+    int readDiff(void);
+    
+    
 #ifdef	__cplusplus
 }
 #endif

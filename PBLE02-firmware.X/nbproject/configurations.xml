@@ -20,6 +20,7 @@
         <itemPath>mcc_generated_files/rtcc.h</itemPath>
         <itemPath>mcc_generated_files/exceptions.h</itemPath>
         <itemPath>mcc_generated_files/tmr1.h</itemPath>
+        <itemPath>mcc_generated_files/mccp1_compare.h</itemPath>
       </logicalFolder>
       <itemPath>keyboard.h</itemPath>
       <itemPath>Utils.h</itemPath>
@@ -48,6 +49,7 @@
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/adc1.c</itemPath>
         <itemPath>mcc_generated_files/tmr1.c</itemPath>
+        <itemPath>mcc_generated_files/mccp1_compare.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>Utils.c</itemPath>

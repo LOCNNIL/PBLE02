@@ -73,11 +73,11 @@
   @Example
     <code>
     // Set RA0 high (1)
-    channel_AN0_SetHigh();
+    AnN_SetHigh();
     </code>
 
 */
-#define channel_AN0_SetHigh()          ( LATASET = (1 << 0) )
+#define AnN_SetHigh()          ( LATASET = (1 << 0) )
 /**
   @Summary
     Sets the GPIO pin, RA0, low using LATA0.
@@ -97,11 +97,11 @@
   @Example
     <code>
     // Set RA0 low (0)
-    channel_AN0_SetLow();
+    AnN_SetLow();
     </code>
 
 */
-#define channel_AN0_SetLow()           ( LATACLR = (1 << 0) )
+#define AnN_SetLow()           ( LATACLR = (1 << 0) )
 
 /**
   @Summary
@@ -122,19 +122,19 @@
   @Example
     <code>
     // Set RA0 to low.
-    channel_AN0_SetValue(false);
+    AnN_SetValue(false);
     </code>
 
 */
-inline static void channel_AN0_SetValue(bool value)
+inline static void AnN_SetValue(bool value)
 {
   if(value)
   {
-    channel_AN0_SetHigh();
+    AnN_SetHigh();
   }
   else
   {
-    channel_AN0_SetLow();
+    AnN_SetLow();
   }
 }
 
@@ -157,11 +157,11 @@ inline static void channel_AN0_SetValue(bool value)
   @Example
     <code>
     // Toggle RA0
-    channel_AN0_Toggle();
+    AnN_Toggle();
     </code>
 
 */
-#define channel_AN0_Toggle()           ( LATAINV = (1 << 0) )
+#define AnN_Toggle()           ( LATAINV = (1 << 0) )
 /**
   @Summary
     Reads the value of the GPIO pin, RA0.
@@ -183,11 +183,11 @@ inline static void channel_AN0_SetValue(bool value)
     uint16_t portValue;
 
     // Read RA0
-    postValue = channel_AN0_GetValue();
+    postValue = AnN_GetValue();
     </code>
 
 */
-#define channel_AN0_GetValue()         PORTAbits.RA0
+#define AnN_GetValue()         PORTAbits.RA0
 /**
   @Summary
     Configures the GPIO pin, RA0, as an input.
@@ -207,11 +207,11 @@ inline static void channel_AN0_SetValue(bool value)
   @Example
     <code>
     // Sets the RA0 as an input
-    channel_AN0_SetDigitalInput();
+    AnN_SetDigitalInput();
     </code>
 
 */
-#define channel_AN0_SetDigitalInput()   ( TRISASET = (1 << 0) )
+#define AnN_SetDigitalInput()   ( TRISASET = (1 << 0) )
 /**
   @Summary
     Configures the GPIO pin, RA0, as an output.
@@ -231,11 +231,11 @@ inline static void channel_AN0_SetValue(bool value)
   @Example
     <code>
     // Sets the RA0 as an output
-    channel_AN0_SetDigitalOutput();
+    AnN_SetDigitalOutput();
     </code>
 
 */
-#define channel_AN0_SetDigitalOutput()   ( TRISACLR = (1 << 0) )
+#define AnN_SetDigitalOutput()   ( TRISACLR = (1 << 0) )
 /**
   @Summary
     Sets the GPIO pin, RA1, high using LATA1.
@@ -255,11 +255,11 @@ inline static void channel_AN0_SetValue(bool value)
   @Example
     <code>
     // Set RA1 high (1)
-    channel_AN1_SetHigh();
+    AnP_SetHigh();
     </code>
 
 */
-#define channel_AN1_SetHigh()          ( LATASET = (1 << 1) )
+#define AnP_SetHigh()          ( LATASET = (1 << 1) )
 /**
   @Summary
     Sets the GPIO pin, RA1, low using LATA1.
@@ -279,11 +279,11 @@ inline static void channel_AN0_SetValue(bool value)
   @Example
     <code>
     // Set RA1 low (0)
-    channel_AN1_SetLow();
+    AnP_SetLow();
     </code>
 
 */
-#define channel_AN1_SetLow()           ( LATACLR = (1 << 1) )
+#define AnP_SetLow()           ( LATACLR = (1 << 1) )
 
 /**
   @Summary
@@ -304,19 +304,19 @@ inline static void channel_AN0_SetValue(bool value)
   @Example
     <code>
     // Set RA1 to low.
-    channel_AN1_SetValue(false);
+    AnP_SetValue(false);
     </code>
 
 */
-inline static void channel_AN1_SetValue(bool value)
+inline static void AnP_SetValue(bool value)
 {
   if(value)
   {
-    channel_AN1_SetHigh();
+    AnP_SetHigh();
   }
   else
   {
-    channel_AN1_SetLow();
+    AnP_SetLow();
   }
 }
 
@@ -339,11 +339,11 @@ inline static void channel_AN1_SetValue(bool value)
   @Example
     <code>
     // Toggle RA1
-    channel_AN1_Toggle();
+    AnP_Toggle();
     </code>
 
 */
-#define channel_AN1_Toggle()           ( LATAINV = (1 << 1) )
+#define AnP_Toggle()           ( LATAINV = (1 << 1) )
 /**
   @Summary
     Reads the value of the GPIO pin, RA1.
@@ -365,11 +365,11 @@ inline static void channel_AN1_SetValue(bool value)
     uint16_t portValue;
 
     // Read RA1
-    postValue = channel_AN1_GetValue();
+    postValue = AnP_GetValue();
     </code>
 
 */
-#define channel_AN1_GetValue()         PORTAbits.RA1
+#define AnP_GetValue()         PORTAbits.RA1
 /**
   @Summary
     Configures the GPIO pin, RA1, as an input.
@@ -389,11 +389,11 @@ inline static void channel_AN1_SetValue(bool value)
   @Example
     <code>
     // Sets the RA1 as an input
-    channel_AN1_SetDigitalInput();
+    AnP_SetDigitalInput();
     </code>
 
 */
-#define channel_AN1_SetDigitalInput()   ( TRISASET = (1 << 1) )
+#define AnP_SetDigitalInput()   ( TRISASET = (1 << 1) )
 /**
   @Summary
     Configures the GPIO pin, RA1, as an output.
@@ -413,11 +413,11 @@ inline static void channel_AN1_SetValue(bool value)
   @Example
     <code>
     // Sets the RA1 as an output
-    channel_AN1_SetDigitalOutput();
+    AnP_SetDigitalOutput();
     </code>
 
 */
-#define channel_AN1_SetDigitalOutput()   ( TRISACLR = (1 << 1) )
+#define AnP_SetDigitalOutput()   ( TRISACLR = (1 << 1) )
 /**
   @Summary
     Sets the GPIO pin, RA10, high using LATA10.
