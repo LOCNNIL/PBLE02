@@ -1,10 +1,3 @@
-/* 
- * File:   lcd.h
- * Author: valter
- *
- * Created on May 15, 2022, 7:26 PM
- */
-
 #ifndef _LCD_H
 #define _LCD_H
 

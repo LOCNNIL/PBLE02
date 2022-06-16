@@ -19,6 +19,7 @@ extern "C" {
     
     void delay_ms(unsigned long ms);
     void delay_us(unsigned long us);
+    void delay_ns(unsigned long ns);
 
     
 #ifdef	__cplusplus

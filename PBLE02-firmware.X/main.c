@@ -46,17 +46,32 @@
   Section: Included Files
 */
 #include "mcc_generated_files/system.h"
+#include "lcd.h"
+#include "mcc_generated_files/pin_manager.h"
+#include "mcc_generated_files/tmr1.h"
+#include "mcc_generated_files/rtcc.h"
 
+uint32_t millis = 0;
+void *timer1(){
+    millis++;
+}
 /*
                          Main application
  */
+
+struct tm *currentTime;
+
 int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
-    while (1)
-    {
-        // Add your application code
+    TMR1_SetInterruptHandler(timer1);
+    lcdInit();
+    lcdCommand(1);
+    lcdString("Test");
+    
+    while (1){
+        
     }
     return 1; 
 }

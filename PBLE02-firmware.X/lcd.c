@@ -74,7 +74,7 @@ void lcdInit() {
     lcdCommand(0x06); //modo incremental
     lcdCommand(0x0c); //display e cursor on, com blink
     lcdCommand(0x03); //zera tudo
-    lcdCommand(0x80); //posição inicial
+    lcdCommand(0x80); //posi??o inicial
     lcdCommand(0x01); //limpar display
 }
 
