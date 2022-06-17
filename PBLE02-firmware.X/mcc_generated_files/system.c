@@ -90,6 +90,7 @@
 #include "adc1.h"
 #include "uart1.h"
 #include "i2c2.h"
+#include "../Utils.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -102,6 +103,8 @@ void SYSTEM_Initialize(void)
     TMR1_Initialize();
     RTCC_Initialize();
     INTERRUPT_GlobalEnable();
+    
+    TMR1_SetInterruptHandler(timer1);
 }
 
 /**

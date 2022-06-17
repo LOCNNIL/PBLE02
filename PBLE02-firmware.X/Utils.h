@@ -17,6 +17,9 @@ extern "C" {
     #define bitClear(value, bit) ((value) &= ~(1UL << (bit)))
     #define bitWrite(value, bit, bitvalue) (bitvalue ? bitSet(value, bit) : bitClear(value, bit))
     
+    uint32_t millis = 0;
+    void *timer1(){ millis++; }
+    
     void delay_ms(unsigned long ms);
     void delay_us(unsigned long us);
     void delay_ns(unsigned long ns);
