@@ -5,10 +5,10 @@
         <group>
             <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/pin_manager.h</file>
             <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/main.c</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/lcd.h</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/system.c</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/lcd.c</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/system.h</file>
+            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/i2c2.h</file>
+            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/memory.c</file>
+            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/memory.h</file>
+            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/keyboard.h</file>
         </group>
     </open-files>
 </project-private>

@@ -11,5 +11,6 @@
     void lcdString(char msg[]);
     void lcdData(unsigned char value);
     void lcdInt(int val);
+    void lcd2Dig(int val);
 
 #endif	// _LCD_H

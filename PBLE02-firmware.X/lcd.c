@@ -103,3 +103,8 @@ void lcdInt(int val) {
     lcdData((val / 1) % 10 + 48);
 
 }
+
+void lcd2Dig(int val){
+    lcdData((val / 10) % 10 + 48);
+    lcdData((val / 1) % 10 + 48);
+}

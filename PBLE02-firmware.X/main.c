@@ -50,27 +50,60 @@
 #include "mcc_generated_files/pin_manager.h"
 #include "mcc_generated_files/tmr1.h"
 #include "mcc_generated_files/rtcc.h"
+#include "Utils.h"
+#include "mcc_generated_files/uart1.h"
+#include "mcc_generated_files/i2c2.h"
+#include "memory.h"
+
+/*
+                         Main application
+ */
+
+struct tm currentTime;
 
 uint32_t millis = 0;
 void *timer1(){
     millis++;
 }
-/*
-                         Main application
- */
-
-struct tm *currentTime;
 
 int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
+    
     TMR1_SetInterruptHandler(timer1);
     lcdInit();
     lcdCommand(1);
-    lcdString("Test");
+    lcdString("Test I2C");
+    lcdCommand(0xc0);
+    
+    uint32_t lst = 0;
+    
+    uint8_t lstSec;
+    
+    uint8_t errCnt = 0;
     
     while (1){
+        if(millis - lst >= 900){
+            if(RTCC_TimeGet(&currentTime)){
+                if(lstSec != currentTime.tm_sec){
+                    lcdCommand(0xC0);
+                    lcd2Dig(currentTime.tm_hour);
+                    lcdChar(':');
+                    lcd2Dig(currentTime.tm_min);
+                    lcdChar(':');
+                    lcd2Dig(currentTime.tm_sec);
+                    lcdChar(' ');
+                    lcdInt(millis - lst);
+                    lst = millis;
+                    lstSec= currentTime.tm_sec;
+                }
+            }else {
+                lcdCommand(0x80);
+                errCnt++;
+                lcdInt(errCnt);
+            }
+        }
         
     }
     return 1; 

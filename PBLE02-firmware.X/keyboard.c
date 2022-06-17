@@ -14,7 +14,7 @@ void updateButtons(uint32_t m){
     ADC1_Disable();
     cnt++;
     if(cnt < (1 << NSAMPLES_2P_SW)) return;
-    keySum = keySum / cnt;
+    keySum = keySum >> NSAMPLES_2P_SW;
     cnt = 0;
     
     for(uint8_t i = 0; i < 5; i++){

@@ -83,14 +83,13 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
-#include "tmr1.h"
+#include "uart1.h"
 #include "rtcc.h"
+#include "i2c2.h"
 #include "interrupt_manager.h"
 #include "exceptions.h"
 #include "adc1.h"
-#include "uart1.h"
-#include "i2c2.h"
-#include "../Utils.h"
+#include "tmr1.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -100,11 +99,10 @@ void SYSTEM_Initialize(void)
     UART1_Initialize();
     ADC1_Initialize();
     I2C2_Initialize();
+    RTCC_Initialize();
     TMR1_Initialize();
     RTCC_Initialize();
     INTERRUPT_GlobalEnable();
-    
-    TMR1_SetInterruptHandler(timer1);
 }
 
 /**

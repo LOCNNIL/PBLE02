@@ -8124,7 +8124,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="LATC"/>
-         <value>0</value>
+         <value>4096</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="LATD"/>
@@ -9440,7 +9440,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="LATC" settingAlias="LATC12"/>
-         <value>clear</value>
+         <value>set</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="LATC" settingAlias="LATC2"/>
@@ -9984,7 +9984,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="RTCC" name="CLOCK FREQ"/>
-         <value>32768</value>
+         <value>32000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="RTCC" name="RTCCTime"/>
@@ -10160,7 +10160,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="RTCC" registerAlias="RTCPWC"/>
-         <value>1073676288</value>
+         <value>1048510465</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="RTCC" registerAlias="RTCSTATL"/>
@@ -10296,7 +10296,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="RTCC" registerAlias="RTCPWC" settingAlias="DIV"/>
-         <value>16383</value>
+         <value>15999</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="RTCC" registerAlias="RTCPWC" settingAlias="FDIV"/>
@@ -10304,7 +10304,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="RTCC" registerAlias="RTCPWC" settingAlias="RTCLK"/>
-         <value>SOSC</value>
+         <value>LPRC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="RTCC" registerAlias="RTCSTATL" settingAlias="ALMEVT"/>
@@ -11738,7 +11738,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\rtcc.c</file>
-         <hash>7e788281c6104a82dfb534a1234c2a98f87fe4dccc29352aaac535b33ae6e048</hash>
+         <hash>eb69ca891ffeea306cf6da3e61e781490acb2975b697a7d7af4ae1b18f8937f9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>
@@ -11746,7 +11746,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>a2adea7e3ab4f0ad98695ba0b1412b25b4a86a529cc34201d7b2f984842c9e61</hash>
+         <hash>e05bef2da24ecdc39cc8440c99234e687acca1b850a77acbdac6cbffc0a8d734</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\clock.h</file>
@@ -11758,7 +11758,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>6e4f19d735acd2324996a024769b2eac48b111982c1e78a795a516331c257b5a</hash>
+         <hash>79050150b8e975f5b40daa68acaf353a528ec303afddd13b4b372cddab6a9d86</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\exceptions.h</file>
@@ -11785,12 +11785,12 @@
          <hash>80e41f9b2b216655cc4d4f427244e87822d11d5d28c7866021e7144c27e7ee3b</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\adc1.c</file>
-         <hash>f04c97eb3a57a51dc011435f9a93043b8e3865d0044cf71a5a2a8d365c8f45c9</hash>
-      </entry>
-      <entry>
          <file>main.c</file>
          <hash>e80110c297680053812fcfec3e667738ae570ac7045d8b70cd762f9911ffbdf5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\adc1.c</file>
+         <hash>f04c97eb3a57a51dc011435f9a93043b8e3865d0044cf71a5a2a8d365c8f45c9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -11802,7 +11802,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>ed7a6aeef84ce1cb254d2c26417537766e9268302142fa7edc77fd36d7a47a55</hash>
+         <hash>9fcd13c55b4bdf352cbd25aa4885c4c0a9e832cf0dad4ab9d5b3e7af0d2ade30</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\rtcc.h</file>
