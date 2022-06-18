@@ -77,3 +77,4 @@ disassembly/
 !/**/nbproject/*.xml
 /**/[Ff]ree/production/*
 /**/[Pp]ro/production/*
+*/.generated_files/flags/default/*
