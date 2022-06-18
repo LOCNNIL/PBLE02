@@ -20,13 +20,15 @@
         <itemPath>mcc_generated_files/rtcc.h</itemPath>
         <itemPath>mcc_generated_files/exceptions.h</itemPath>
         <itemPath>mcc_generated_files/tmr1.h</itemPath>
-        <itemPath>mcc_generated_files/mccp1_compare.h</itemPath>
       </logicalFolder>
       <itemPath>keyboard.h</itemPath>
       <itemPath>Utils.h</itemPath>
       <itemPath>lcd.h</itemPath>
       <itemPath>memory.h</itemPath>
       <itemPath>adc.h</itemPath>
+      <itemPath>menu.h</itemPath>
+      <itemPath>statemachine.h</itemPath>
+      <itemPath>var.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -49,7 +51,6 @@
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/adc1.c</itemPath>
         <itemPath>mcc_generated_files/tmr1.c</itemPath>
-        <itemPath>mcc_generated_files/mccp1_compare.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>Utils.c</itemPath>
@@ -57,6 +58,7 @@
       <itemPath>lcd.c</itemPath>
       <itemPath>memory.c</itemPath>
       <itemPath>adc.c</itemPath>
+      <itemPath>menu.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

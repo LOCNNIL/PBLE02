@@ -73,7 +73,7 @@
 #pragma config SOSCEN = ON    //Secondary Oscillator Enable bit->Secondary oscillator is enabled
 #pragma config IESO = ON    //Two Speed Startup Enable bit->Two speed startup is enabled
 #pragma config POSCMOD = OFF    //Primary Oscillator Selection bit->Primary oscillator is disabled
-#pragma config OSCIOFNC = OFF    //System Clock on CLKO Pin Enable bit->OSCO pin operates as a normal I/O
+#pragma config OSCIOFNC = ON    //System Clock on CLKO Pin Enable bit->System clock is connected to CLKO/OSC2 pin
 #pragma config SOSCSEL = OFF    //Secondary Oscillator External Clock Enable bit->SOSC pins configured for Crystal mode
 #pragma config FCKSM = CSECME    //Clock Switching and Fail-Safe Clock Monitor Enable bits->Clock switching is enabled; Fail-safe clock monitor is enabled
 
@@ -83,26 +83,24 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
-#include "i2c2.h"
+#include "rtcc.h"
+#include "tmr1.h"
 #include "interrupt_manager.h"
 #include "exceptions.h"
+#include "i2c2.h"
 #include "uart1.h"
-#include "tmr1.h"
 #include "adc1.h"
-#include "mccp1_compare.h"
-#include "rtcc.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
     INTERRUPT_Initialize();
     CLOCK_Initialize();
-    MCCP1_COMPARE_Initialize();
     UART1_Initialize();
     ADC1_Initialize();
     I2C2_Initialize();
-    TMR1_Initialize();
     RTCC_Initialize();
+    TMR1_Initialize();
     INTERRUPT_GlobalEnable();
 }
 

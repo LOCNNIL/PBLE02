@@ -55,7 +55,7 @@
 #include "mcc_generated_files/i2c2.h"
 #include "memory.h"
 #include "adc.h"
-#include "mcc_generated_files/mccp1_compare.h"
+#include "menu.h"
 /*
                          Main application
  */
@@ -71,31 +71,15 @@ int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
+    lcdInit();
     
-    uint32_t priVal,secVal;
-    bool completeCycle = false;
-    priVal = 0x12378958;
-    secVal = 0x2000;
-
-    MCCP1_COMPARE_Initialize();
-    
-    MCCP1_COMPARE_SingleCompare32ValueSet( priVal );
-    MCCP1_COMPARE_Start();
-    
-    LED1_SetHigh();
+    updateDisplayMenu(1);
   
-    while(1);
-    /*
-     * 
-    while(1)
-    {
-       
-        completeCycle = MCCP1_COMPARE_IsCompareCycleComplete();
-        if(completeCycle)
-        {
-            //MCCP1_COMPARE_Stop();
-        }
-    }*/
+    while(1){
+        updateDisplayData(1);
+        delay_ms(100);
+    }
+    
     return 1; 
 }
 /**
