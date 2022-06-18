@@ -17,7 +17,7 @@ uint8_t writeMem(uint16_t address, uint8_t* pData, uint16_t ncount){
         data++;
     }
     
-    I2C2_MasterWrite(pd, 3, MEMADDR, &pstatus);
+    I2C2_MasterWrite(pd, ncount+2, MEMADDR, &pstatus);
     
     while(pstatus == I2C2_MESSAGE_PENDING);
     
@@ -41,7 +41,7 @@ uint8_t readMem(int16_t address, uint8_t *pData, uint16_t nCount){
     while(status == I2C2_MESSAGE_PENDING);
     if(status != I2C2_MESSAGE_COMPLETE) return 0;
     
-    I2C2_MasterRead(pData, 1, MEMADDR, &status);
+    I2C2_MasterRead(pData, nCount, MEMADDR, &status);
     
     while(status == I2C2_MESSAGE_PENDING);
     
