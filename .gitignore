@@ -72,4 +72,8 @@ disassembly/
 *.map
 
 #MCC
-*/.generated_files/*
+/**/build/*
+/**/nbproject/*
+!/**/nbproject/*.xml
+/**/[Ff]ree/production/*
+/**/[Pp]ro/production/*
