@@ -4,11 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/derso/PBLE02-firmware/PBLE02-firmware.X/main.c</file>
-            <file>file:/C:/Users/derso/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/sccp4_compare.h</file>
-            <file>file:/C:/Users/derso/PBLE02-firmware/PBLE02-firmware.X/adc.h</file>
-            <file>file:/C:/Users/derso/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/sccp4_compare.c</file>
-            <file>file:/C:/Users/derso/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/adc1.h</file>
-            <file>file:/C:/Users/derso/PBLE02-firmware/PBLE02-firmware.X/adc.c</file>
+            <file>file:/C:/Users/derso/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/mccp1_compare.h</file>
+            <file>file:/C:/Users/derso/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/mccp1_compare.c</file>
         </group>
     </open-files>
 </project-private>
