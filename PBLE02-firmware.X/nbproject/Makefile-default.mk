@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/i2c2.c mcc_generated_files/exceptions.c mcc_generated_files/uart1.c mcc_generated_files/rtcc.c mcc_generated_files/pin_manager.c mcc_generated_files/adc1.c mcc_generated_files/tmr1.c main.c Utils.c keyboard.c lcd.c memory.c adc.c menu.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/i2c2.c mcc_generated_files/exceptions.c mcc_generated_files/uart1.c mcc_generated_files/rtcc.c mcc_generated_files/pin_manager.c mcc_generated_files/adc1.c mcc_generated_files/tmr1.c main.c Utils.c keyboard.c lcd.c memory.c adc.c menu.c var.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/i2c2.o ${OBJECTDIR}/mcc_generated_files/exceptions.o ${OBJECTDIR}/mcc_generated_files/uart1.o ${OBJECTDIR}/mcc_generated_files/rtcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/adc1.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Utils.o ${OBJECTDIR}/keyboard.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/memory.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/menu.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/i2c2.o.d ${OBJECTDIR}/mcc_generated_files/exceptions.o.d ${OBJECTDIR}/mcc_generated_files/uart1.o.d ${OBJECTDIR}/mcc_generated_files/rtcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/adc1.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Utils.o.d ${OBJECTDIR}/keyboard.o.d ${OBJECTDIR}/lcd.o.d ${OBJECTDIR}/memory.o.d ${OBJECTDIR}/adc.o.d ${OBJECTDIR}/menu.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/i2c2.o ${OBJECTDIR}/mcc_generated_files/exceptions.o ${OBJECTDIR}/mcc_generated_files/uart1.o ${OBJECTDIR}/mcc_generated_files/rtcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/adc1.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Utils.o ${OBJECTDIR}/keyboard.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/memory.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/menu.o ${OBJECTDIR}/var.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/i2c2.o.d ${OBJECTDIR}/mcc_generated_files/exceptions.o.d ${OBJECTDIR}/mcc_generated_files/uart1.o.d ${OBJECTDIR}/mcc_generated_files/rtcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/adc1.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Utils.o.d ${OBJECTDIR}/keyboard.o.d ${OBJECTDIR}/lcd.o.d ${OBJECTDIR}/memory.o.d ${OBJECTDIR}/adc.o.d ${OBJECTDIR}/menu.o.d ${OBJECTDIR}/var.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/i2c2.o ${OBJECTDIR}/mcc_generated_files/exceptions.o ${OBJECTDIR}/mcc_generated_files/uart1.o ${OBJECTDIR}/mcc_generated_files/rtcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/adc1.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Utils.o ${OBJECTDIR}/keyboard.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/memory.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/menu.o
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/i2c2.o ${OBJECTDIR}/mcc_generated_files/exceptions.o ${OBJECTDIR}/mcc_generated_files/uart1.o ${OBJECTDIR}/mcc_generated_files/rtcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/adc1.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Utils.o ${OBJECTDIR}/keyboard.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/memory.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/menu.o ${OBJECTDIR}/var.o
 
 # Source Files
-SOURCEFILES=mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/i2c2.c mcc_generated_files/exceptions.c mcc_generated_files/uart1.c mcc_generated_files/rtcc.c mcc_generated_files/pin_manager.c mcc_generated_files/adc1.c mcc_generated_files/tmr1.c main.c Utils.c keyboard.c lcd.c memory.c adc.c menu.c
+SOURCEFILES=mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/i2c2.c mcc_generated_files/exceptions.c mcc_generated_files/uart1.c mcc_generated_files/rtcc.c mcc_generated_files/pin_manager.c mcc_generated_files/adc1.c mcc_generated_files/tmr1.c main.c Utils.c keyboard.c lcd.c memory.c adc.c menu.c var.c
 
 
 
@@ -215,6 +215,12 @@ ${OBJECTDIR}/menu.o: menu.c  .generated_files/flags/default/32725d0376b67eb485f9
 	@${RM} ${OBJECTDIR}/menu.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/menu.o.d" -o ${OBJECTDIR}/menu.o menu.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
+${OBJECTDIR}/var.o: var.c  .generated_files/flags/default/60588e1ddb5c70d1e3535066e6322a7396c4e9de .generated_files/flags/default/1d6219621f8b7462ea9919fdd0641d297fa7633f
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/var.o.d 
+	@${RM} ${OBJECTDIR}/var.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/var.o.d" -o ${OBJECTDIR}/var.o var.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
 else
 ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o: mcc_generated_files/interrupt_manager.c  .generated_files/flags/default/7173176e6d3130605cab7b4848d0f613c298f3f4 .generated_files/flags/default/1d6219621f8b7462ea9919fdd0641d297fa7633f
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
@@ -323,6 +329,12 @@ ${OBJECTDIR}/menu.o: menu.c  .generated_files/flags/default/85990a4372cdf018d62f
 	@${RM} ${OBJECTDIR}/menu.o.d 
 	@${RM} ${OBJECTDIR}/menu.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/menu.o.d" -o ${OBJECTDIR}/menu.o menu.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/var.o: var.c  .generated_files/flags/default/2ec19cfbfab2fe6f5182ef8fdb07c70560ecebef .generated_files/flags/default/1d6219621f8b7462ea9919fdd0641d297fa7633f
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/var.o.d 
+	@${RM} ${OBJECTDIR}/var.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/var.o.d" -o ${OBJECTDIR}/var.o var.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 endif
 

@@ -56,6 +56,7 @@
 #include "memory.h"
 #include "adc.h"
 #include "menu.h"
+#include "var.h"
 /*
                          Main application
  */
@@ -72,11 +73,13 @@ int main(void)
     // initialize the device
     SYSTEM_Initialize();
     lcdInit();
+    lcdCommand(1);
+    setAlarmHigh1(0xACDE);
+    uint16_t s = getAlarmHigh1();
+    lcdInt(s);
     
-    updateDisplayMenu(1);
-  
     while(1){
-        updateDisplayData(1);
+        //updateDisplayData(1);
         delay_ms(100);
     }
     

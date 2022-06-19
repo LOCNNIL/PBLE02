@@ -5,14 +5,10 @@
         <group>
             <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/var.h</file>
             <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/main.c</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/menu.h</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/exceptions.c</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/statemachine.h</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/tmr1.h</file>
+            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/var.c</file>
+            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/lcd.h</file>
             <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/menu.c</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/adc1.h</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/mcc_generated_files/exceptions.h</file>
-            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/adc.h</file>
+            <file>file:/C:/Users/derso/Documents/GitHub/PBLE02-firmware/PBLE02-firmware.X/lcd.c</file>
         </group>
     </open-files>
 </project-private>

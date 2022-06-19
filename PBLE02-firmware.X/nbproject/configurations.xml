@@ -59,6 +59,7 @@
       <itemPath>memory.c</itemPath>
       <itemPath>adc.c</itemPath>
       <itemPath>menu.c</itemPath>
+      <itemPath>var.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
