@@ -12,10 +12,15 @@
 extern "C" {
 #endif
 
-    uint16_t getAlarmHigh1(void){return 100;};
+#include "mcc_generated_files/system.h"
+    
+    uint8_t getState(void);
+    void setState(uint8_t state);
+    
+    uint16_t getAlarmHigh1(void);
     void setAlarmHigh1(uint16_t alarmHigh1);
 
-    uint16_t getAlarmLow1(void){return 0;};
+    uint16_t getAlarmLow1(void);
     void setAlarmLow1(uint16_t alarmLow1);
 
     uint16_t getAlarmHigh2(void);
