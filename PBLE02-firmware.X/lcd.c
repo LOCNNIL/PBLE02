@@ -108,3 +108,17 @@ void lcd2Dig(int val){
     lcdData((val / 10) % 10 + 48);
     lcdData((val / 1) % 10 + 48);
 }
+
+void lcdUInt16(uint16_t val){
+    lcdData((val / 10000) % 10 + 48);
+    lcdData((val / 1000) % 10 + 48);
+    lcdData((val / 100) % 10 + 48);
+    lcdData((val / 10) % 10 + 48);
+    lcdData((val / 1) % 10 + 48);
+}
+
+void lcdUInt8(uint8_t val){
+    lcdData((val / 100) % 10 + 48);
+    lcdData((val / 10) % 10 + 48);
+    lcdData((val / 1) % 10 + 48);
+}
