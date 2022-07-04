@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-    enum{
+    enum states{
         ALARM1,
         HIGH_ALARM1,
         LOW_ALARM1,
@@ -21,9 +21,12 @@ extern "C" {
         LOW_ALARM2,
         TIME,
         LANGUAGE
-    }states;
-
-
+    };
+    
+    void initSM(void);
+    
+    void updateSM(uint8_t btns);
+  
 #ifdef	__cplusplus
 }
 #endif
