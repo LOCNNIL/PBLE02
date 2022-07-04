@@ -80,6 +80,11 @@ const char menus[7][2][2][16] = {
     }
 };
 
+void initDisplay(void){
+    lcdInit();
+    lcdCommand(1);
+}
+
 void updateDisplayMenu(char STATE){
     
     lcdCommand(1);

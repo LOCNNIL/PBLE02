@@ -11,8 +11,9 @@
 extern "C" {
 #endif
 
+    void initDisplay(void);
+    
     void updateDisplayMenu(uint8_t STATE);
-
     
     void updateDisplayData(char STATE);    
 #ifdef	__cplusplus
