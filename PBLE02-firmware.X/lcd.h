@@ -14,6 +14,7 @@
     void lcdData(unsigned char value);
     void lcdInt(int val);
     void lcd2Dig(int val);
+    void lcdUInt32(uint32_t val);
     void lcdUInt16(uint16_t val);
     void lcdUInt8(uint8_t val);
 #endif	// _LCD_H
