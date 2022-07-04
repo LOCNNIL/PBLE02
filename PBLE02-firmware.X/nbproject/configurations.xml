@@ -60,6 +60,7 @@
       <itemPath>adc.c</itemPath>
       <itemPath>menu.c</itemPath>
       <itemPath>var.c</itemPath>
+      <itemPath>statemachine.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

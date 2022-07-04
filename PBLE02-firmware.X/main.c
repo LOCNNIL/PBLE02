@@ -57,30 +57,45 @@
 #include "adc.h"
 #include "menu.h"
 #include "var.h"
+#include "statemachine.h"
 /*
                          Main application
  */
 
 struct tm currentTime;
 
-uint32_t millis = 0;
+volatile uint32_t millis = 0;
 void *timer1(){
     millis++;
 }
+
+uint32_t lstTimeSM = 0;
+#define SM_Period 200
+
+uint32_t lstTimeKEY = 0;
+#define KEY_Period 10
+uint8_t lstBtn = 0;
+uint8_t btns = 0;
 
 int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
-    lcdInit();
-    lcdCommand(1);
-    setAlarmHigh1(0xACDE);
-    uint16_t s = getAlarmHigh1();
-    lcdInt(s);
+    //initSM();
     
-    while(1){
-        //updateDisplayData(1);
-        delay_ms(100);
+    for(;;){
+        btns = getButtons();
+        if(lstBtn != btns){
+            lstBtn = btns;
+            updateSM(btns);
+        }
+        
+        if(millis - lstTimeKEY > KEY_Period){
+            lstTimeKEY = millis;
+            updateButtons(millis);
+        }
+        
+        delay_ms(1000);
     }
     
     return 1; 
