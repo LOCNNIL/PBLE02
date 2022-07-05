@@ -64,7 +64,7 @@
 
 struct tm currentTime;
 
-volatile uint32_t millis = 0;
+static volatile uint32_t millis = 0;
 void *timer1(){
     millis++;
 }
@@ -94,8 +94,6 @@ int main(void)
             lstTimeKEY = millis;
             updateButtons(millis);
         }
-        
-        delay_ms(1000);
     }
     
     return 1; 

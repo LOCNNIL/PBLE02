@@ -29,6 +29,7 @@
       <itemPath>menu.h</itemPath>
       <itemPath>statemachine.h</itemPath>
       <itemPath>var.h</itemPath>
+      <itemPath>alarm.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -52,6 +53,8 @@
         <itemPath>mcc_generated_files/adc1.c</itemPath>
         <itemPath>mcc_generated_files/tmr1.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f1" displayName="New Folder 1" projectFiles="true">
+      </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>Utils.c</itemPath>
       <itemPath>keyboard.c</itemPath>
@@ -61,6 +64,7 @@
       <itemPath>menu.c</itemPath>
       <itemPath>var.c</itemPath>
       <itemPath>statemachine.c</itemPath>
+      <itemPath>alarm.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
