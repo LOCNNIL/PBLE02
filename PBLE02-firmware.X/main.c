@@ -58,13 +58,13 @@
 #include "menu.h"
 #include "var.h"
 #include "statemachine.h"
+#include "keyboard.h"
 /*
                          Main application
  */
 
 struct tm currentTime;
 
-static volatile uint32_t millis = 0;
 void *timer1(){
     millis++;
 }
