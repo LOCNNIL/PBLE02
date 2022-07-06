@@ -14,7 +14,7 @@ extern "C" {
 
 #include "mcc_generated_files/system.h"
     
-    enum states{
+    typedef enum {
         ALARM1,
         HIGH_ALARM1,
         LOW_ALARM1,
@@ -23,7 +23,7 @@ extern "C" {
         LOW_ALARM2,
         TIME,
         LANGUAGE
-    };
+    }states;
     
     void initSM(void);
     
