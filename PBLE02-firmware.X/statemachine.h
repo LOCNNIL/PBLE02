@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-    enum states{
+    typedef enum states{
         ALARM1,
         HIGH_ALARM1,
         LOW_ALARM1,
