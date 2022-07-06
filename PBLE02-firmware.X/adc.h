@@ -5,6 +5,8 @@
  * Created on June 17, 2022, 1:41 PM
  */
 
+#include "mcc_generated_files/system.h"
+
 #ifndef ADC_H
 #define	ADC_H
 
