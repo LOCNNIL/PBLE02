@@ -12,7 +12,9 @@
 extern "C" {
 #endif
 
-    typedef enum states{
+#include "mcc_generated_files/system.h"
+    
+    enum states{
         ALARM1,
         HIGH_ALARM1,
         LOW_ALARM1,
