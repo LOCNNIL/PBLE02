@@ -1,7 +1,6 @@
 #include "mcc_generated_files/adc1.h"
 #include "mcc_generated_files/system.h"
-#define POTSAMPLES 3
-#define DIFSAMPLES 3
+#include "adc.h"
 
 uint16_t readPOTADC(void){
     uint32_t potSum = 0;
