@@ -4,6 +4,8 @@
 #include "var.h"
 #include "Utils.h"
 
+uint8_t timerSet;
+
 void initAlarms(void){
     timerSet = 0;
 }
@@ -20,16 +22,16 @@ uint8_t updateAlarmsStatus(void){
     uint16_t pot = readPOTADC();
     int diff = readDiff();
     
-    if(pot < low1){
+    if(pot <= low1){
         bitSet(o, 0);
-    }else if(pot > high1){
+    }else if(pot >= high1){
         bitSet(o, 0);
         bitSet(o, 1);
     }
     
-    if(diff < low2){
+    if(diff <= low2){
         bitSet(o, 2);
-    }else if(pot > high2){
+    }else if(pot >= high2){
         bitSet(o, 2);
         bitSet(o, 3);
     }
