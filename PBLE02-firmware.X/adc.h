@@ -6,7 +6,7 @@
  */
 
 #define POTSAMPLES 4
-#define DIFSAMPLES 3
+#define DIFSAMPLES 4
 #include "mcc_generated_files/system.h"
 
 #ifndef ADC_H
