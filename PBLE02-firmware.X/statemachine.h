@@ -22,12 +22,14 @@ extern "C" {
         HIGH_ALARM2,
         LOW_ALARM2,
         TIME,
-        LANGUAGE
+        SET_TIMER,
+        LANGUAGE,
+        STATES_END
     }states;
     
     void initSM(void);
     
-    void updateSM(uint8_t btns);
+    void updateSM(uint8_t btns, uint32_t m);
   
 #ifdef	__cplusplus
 }
