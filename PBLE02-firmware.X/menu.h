@@ -7,15 +7,18 @@
 #ifndef MENU_H
 #define	MENU_H
 
+#include "statemachine.h"
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
 
     void initDisplay(void);
     
-    void updateDisplayMenu(uint8_t STATE);
+    void updateDisplayMenu(uint32_t m);
     
-    void updateDisplayData(char STATE);    
+    void updateDisplayData(uint32_t m);
+    void updateDisplayLimits();
 #ifdef	__cplusplus
 }
 #endif
