@@ -7,6 +7,7 @@
 #include "alarm.h"
 #include "menu.h"
 #include "keyboard.h"
+#include "serialCom.h"
 
 void *timer1(){
     millis++;
@@ -36,13 +37,13 @@ int main(void){
     
     //setLanguage(0);
     
-    
+    initSerial();
     initAlarms();
     initSM();
     updateSM(0, millis);
     for(;;){
         
-        
+        serialUpdate(millis);
         
         updateButtons(millis);
         btns = getButtons();
@@ -83,7 +84,6 @@ int main(void){
             updateDisplayData(millis);
             
         }
-        
     }
     
     return 1; 
