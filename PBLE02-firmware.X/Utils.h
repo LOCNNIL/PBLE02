@@ -7,7 +7,7 @@
 
 #include "mcc_generated_files/system.h"
 
-static volatile uint32_t millis = 0;
+static uint32_t millis = 0;
 
 #ifndef UTILS_H
 #define	UTILS_H

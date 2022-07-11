@@ -16,4 +16,3 @@ void delay_ns(unsigned long ns){
     volatile unsigned int l = 0;
     for(l = 0; l < (ns*825)>>20; l++);
 }
-
