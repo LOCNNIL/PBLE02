@@ -14,8 +14,8 @@ extern "C" {
 
 #include "mcc_generated_files/system.h"
 
-#define NSAMPLES_2P_SW 5 //MAX 20
-#define TIMECHANGE 5 //millisegundos
+#define NSAMPLES_2P_SW 0 //MAX 20
+#define TIMECHANGE 1 //millisegundos
     
     uint8_t getButtons();
     
