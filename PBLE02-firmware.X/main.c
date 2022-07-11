@@ -1,104 +1,90 @@
-/**
-  Generated main.c file from MPLAB Code Configurator
-
-  @Company
-    Microchip Technology Inc.
-
-  @File Name
-    main.c
-
-  @Summary
-    This is the generated main.c using PIC24 / dsPIC33 / PIC32MM MCUs.
-
-  @Description
-    This source file provides main entry point for system initialization and application code development.
-    Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
-        Device            :  PIC32MM0064GPM048
-    The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.70
-        MPLAB 	          :  MPLAB X v5.50
-*/
-
-/*
-    (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
-    software and any derivatives exclusively with Microchip products.
-
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
-    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
-
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-
-    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
-    TERMS.
-*/
-
-/**
-  Section: Included Files
-*/
 #include "mcc_generated_files/system.h"
-#include "lcd.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "mcc_generated_files/tmr1.h"
-#include "mcc_generated_files/rtcc.h"
+#include "lcd.h"
 #include "Utils.h"
-#include "mcc_generated_files/uart1.h"
-#include "mcc_generated_files/i2c2.h"
-#include "memory.h"
-#include "adc.h"
-#include "menu.h"
-#include "var.h"
 #include "statemachine.h"
+#include "alarm.h"
+#include "menu.h"
 #include "keyboard.h"
-/*
-                         Main application
- */
-
-struct tm currentTime;
 
 void *timer1(){
     millis++;
 }
 
-uint32_t lstTimeSM = 0;
-#define SM_Period 200
+uint32_t lstTimeDataUp = 0;
+#define DT_Period 200
+
+uint32_t lstAlarm = 0;
+#define Alarm_Period 150
+uint8_t lstStatus = 0;
 
 uint32_t lstTimeKEY = 0;
 #define KEY_Period 10
 uint8_t lstBtn = 0;
 uint8_t btns = 0;
 
-int main(void)
-{
+int main(void){
     // initialize the device
     SYSTEM_Initialize();
-    //initSM();
+    TMR1_SetInterruptHandler(timer1);
     
+    LED1_SetHigh();
+    LED2_SetHigh();
+    LED3_SetHigh();
+    LED4_SetHigh();
+    
+    //setLanguage(0);
+    
+    
+    initAlarms();
+    initSM();
+    updateSM(0, millis);
     for(;;){
+        
+        
+        
+        updateButtons(millis);
         btns = getButtons();
         if(lstBtn != btns){
             lstBtn = btns;
-            updateSM(btns);
+            updateSM(btns, millis);
+            updateDisplayLimits();
         }
         
-        if(millis - lstTimeKEY > KEY_Period){
-            lstTimeKEY = millis;
-            updateButtons(millis);
+        if(millis - lstAlarm >= Alarm_Period){
+            lstAlarm = millis;
+            
+            uint8_t alarmStatus = updateAlarmsStatus();
+            if(lstStatus != alarmStatus){
+                lstStatus = alarmStatus;
+                if(bitRead(alarmStatus, 0)){
+                    if(bitRead(alarmStatus, 1))LED2_SetLow();
+                    if(!bitRead(alarmStatus, 1))LED1_SetLow();
+                }else{
+                    LED1_SetHigh();
+                    LED2_SetHigh();
+                }
+                
+                if(bitRead(alarmStatus, 2)){
+                    if(bitRead(alarmStatus, 3))LED4_SetLow();
+                    if(!bitRead(alarmStatus, 3))LED3_SetLow();
+                }else{
+                    LED3_SetHigh();
+                    LED4_SetHigh();
+                }
+                
+            }
         }
+        
+        if(millis - lstTimeDataUp >= DT_Period){
+            lstTimeDataUp = millis;
+            
+            updateDisplayData(millis);
+            
+        }
+        
     }
     
     return 1; 
 }
-/**
- End of File
-*/
-
