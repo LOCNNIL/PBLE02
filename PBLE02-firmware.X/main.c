@@ -55,25 +55,22 @@ int main(void){
         
         if(millis - lstAlarm >= Alarm_Period){
             lstAlarm = millis;
-            
-            uint8_t alarmStatus = updateAlarmsStatus();
+            uint8_t alarmStatus = updateAlarmsStatus(millis);
             if(lstStatus != alarmStatus){
+                seriaAlarm(alarmStatus, millis);
                 lstStatus = alarmStatus;
-                if(bitRead(alarmStatus, 0)){
-                    if(bitRead(alarmStatus, 1))LED2_SetLow();
-                    if(!bitRead(alarmStatus, 1))LED1_SetLow();
-                }else{
-                    LED1_SetHigh();
-                    LED2_SetHigh();
-                }
+                if(bitRead(alarmStatus, 0)) LED1_SetLow();
+                else LED1_SetHigh();
                 
-                if(bitRead(alarmStatus, 2)){
-                    if(bitRead(alarmStatus, 3))LED4_SetLow();
-                    if(!bitRead(alarmStatus, 3))LED3_SetLow();
-                }else{
-                    LED3_SetHigh();
-                    LED4_SetHigh();
-                }
+                if(bitRead(alarmStatus, 1)) LED2_SetLow();
+                else LED2_SetHigh();
+                
+                if(bitRead(alarmStatus, 2)) LED3_SetLow();
+                else LED3_SetHigh();
+                
+                if(bitRead(alarmStatus, 3)) LED4_SetLow();
+                else LED4_SetHigh();
+                
                 
             }
         }
