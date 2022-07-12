@@ -16,7 +16,8 @@ extern "C" {
     
     void initSerial(void);
     void serialUpdate(uint32_t m);
-
+    void seriaAlarm(uint8_t a, uint32_t m);
+    
 #ifdef	__cplusplus
 }
 #endif

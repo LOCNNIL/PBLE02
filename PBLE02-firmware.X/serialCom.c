@@ -4,6 +4,7 @@
 #include "var.h"
 #include "menu.h"
 #include "lcd.h"
+#include "Utils.h"
 
 #define startCommand '$'
 #define commandSize 8
@@ -42,6 +43,7 @@ void serialUpdate(uint32_t m){
     
     for(uint8_t i = 0; i < commandSize; i++)
         UART1_Write(read[i]);
+    UART1_Write('\n');
     uint32_t vl;
     
     switch(read[1]){
@@ -67,21 +69,118 @@ void serialUpdate(uint32_t m){
         
         case 'T':
             vl = (read[2]-48)*100000+(read[3]-48)*10000+(read[4]-48)*1000+(read[5]-48)*100+(read[6]-48)*10+(read[7]-48);
-            //lcdCommand(0x80);
-            //lcdUInt32(vl);
+
             setTimer(vl*1000+m);
             
             break;
             
         case 'L':
             if(read[7] == 'P'){
-                setTimer(0);
+                setLanguage(0);
             }else if(read[7] == 'E'){
-                setTimer(1);
+                setLanguage(1);
             }
             break;
     }
     updateSM(0, m);
     
     
+}
+
+static uint8_t lstAS = 0;
+
+const char msgAlarm[5][2][19] = {
+    {
+        "ALARME 1 BAIXO em ",
+        "ALARM 1 LOW in "
+    },
+    {
+        "ALARME 1 ALTO em ",
+        "ALARM 1 HIGH in "
+    },
+    {
+        "ALARME 2 BAIXO em ",
+        "ALARM 2 LOW in "
+    },
+    {
+        "ALARME 2 ALTO em ",
+        "ALARM 2 HIGH in "
+    },
+    {
+        "TEMPORIZADOR em ",
+        "TIMER in "
+    }
+};
+
+void seriaAlarm(uint8_t a, uint32_t m){
+    
+    uint8_t l = getLanguage()%2;
+    
+    while(!UART1_IsTxReady());
+    
+    if(bitRead(a, 0) != bitRead(lstAS, 0) && bitRead(a, 0)){
+        uint8_t i = 0;
+        while(msgAlarm[0][l][i] != 0){
+            UART1_Write(msgAlarm[0][l][i]);
+            i++;
+        }
+        UART1_Write(((m / 1000)/1000) % 10 + 48);
+        UART1_Write(((m / 1000)/100) % 10 + 48);
+        UART1_Write(((m / 1000)/10) % 10 + 48);
+        UART1_Write(((m / 1000)/1) % 10 + 48);
+        UART1_Write('\n');
+    }
+    
+    if(bitRead(a, 1) != bitRead(lstAS, 1) && bitRead(a, 1)){
+        uint8_t i = 0;
+        while(msgAlarm[1][l][i] != 0){
+            UART1_Write(msgAlarm[1][l][i]);
+            i++;
+        }
+        UART1_Write(((m / 1000)/1000) % 10 + 48);
+        UART1_Write(((m / 1000)/100) % 10 + 48);
+        UART1_Write(((m / 1000)/10) % 10 + 48);
+        UART1_Write(((m / 1000)/1) % 10 + 48);
+        UART1_Write('\n');
+    }
+    
+    if(bitRead(a, 2) != bitRead(lstAS, 2) && bitRead(a, 2)){
+        uint8_t i = 0;
+        while(msgAlarm[2][l][i] != 0){
+            UART1_Write(msgAlarm[2][l][i]);
+            i++;
+        }
+        UART1_Write(((m / 1000)/1000) % 10 + 48);
+        UART1_Write(((m / 1000)/100) % 10 + 48);
+        UART1_Write(((m / 1000)/10) % 10 + 48);
+        UART1_Write(((m / 1000)/1) % 10 + 48);
+        UART1_Write('\n');
+    }
+    
+    if(bitRead(a, 3) != bitRead(lstAS, 3) && bitRead(a, 3)){
+        uint8_t i = 0;
+        while(msgAlarm[3][l][i] != 0){
+            UART1_Write(msgAlarm[3][l][i]);
+            i++;
+        }
+        UART1_Write(((m / 1000)/1000) % 10 + 48);
+        UART1_Write(((m / 1000)/100) % 10 + 48);
+        UART1_Write(((m / 1000)/10) % 10 + 48);
+        UART1_Write(((m / 1000)/1) % 10 + 48);
+        UART1_Write('\n');
+    }
+    
+    if(bitRead(a, 4) != bitRead(lstAS, 4) && bitRead(a, 4)){
+        uint8_t i = 0;
+        while(msgAlarm[4][l][i] != 0){
+            UART1_Write(msgAlarm[4][l][i]);
+            i++;
+        }
+        UART1_Write(((m / 1000)/1000) % 10 + 48);
+        UART1_Write(((m / 1000)/100) % 10 + 48);
+        UART1_Write(((m / 1000)/10) % 10 + 48);
+        UART1_Write(((m / 1000)/1) % 10 + 48);
+        UART1_Write('\n');
+    }
+    lstAS=a;
 }
