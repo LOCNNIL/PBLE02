@@ -15,7 +15,7 @@ extern "C" {
 #endif
     
     void initAlarms(void);
-    uint8_t updateAlarmsStatus(void);
+    uint8_t updateAlarmsStatus(uint32_t m);
     
     
 
